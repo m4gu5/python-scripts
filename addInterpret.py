@@ -23,6 +23,8 @@ if not directory.endswith('/'):
 for f in os.listdir(directory):
     if not f.startswith(interpret):
         # If interpret is not already included
-        os.rename(directory + f, directory + interpret + ' - ' + f)
+        if not os.path.isdir(directory + f):
+            # Do not rename directories
+            os.rename(directory + f, directory + interpret + ' - ' + f)
 
 
