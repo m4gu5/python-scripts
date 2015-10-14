@@ -7,6 +7,15 @@ Most scripts use Python 3, so if you encounter any problems while running one of
 
 All scripts are licensend under the terms of GPL.
 
+boincUpdate.py
+--------------
+Periodically issues an Update command for a BOINC project on a given host.
+This can be used to grab Workunits even if there are only very few available.
+
+Example usage:
+
+`$ python boincUpdate.py --host 192.168.2.5 --passwd 'notsosecurepassword' --project http://www.worldcommunitygrid.org`
+
 addInterpret.py
 ---------------
 Appends the name of an interpret to existing music files within a directory.

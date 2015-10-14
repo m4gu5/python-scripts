@@ -28,8 +28,9 @@ while query:
         print('[' + time.strftime('%Y-%m-%d %H:%M:%S') + '] Updating ' + project + ' on host ' + host)
         p = subprocess.Popen(['boinccmd', '--host', host, '--passwd', passwd, '--project', project, 'update'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         out, err = p.communicate()
-        p.stdout.close()
-        p.stderr.close()
         time.sleep(interval)
     except KeyboardInterrupt:
         query = False
+    finally:
+        p.stdout.close()
+        p.stderr.close()
